@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 @RunWith(JUnitParamsRunner.class)
 public class WordsCountAnalizerTest {
 
-    private static Analizer analizer;
+    private Analizer analizer;
 
     @Before
     public void before() {
@@ -44,9 +44,15 @@ public class WordsCountAnalizerTest {
     }
 
     @Test
-    public void testWithDigits() {
+    public void testWithDigits1() {
         String text = "Test 111 message with 222 digits.";
-        assertThat(analizer.analize(text)).isEqualTo(6);
+        assertThat(analizer.analize(text)).isEqualTo(4);
+    }
+
+    @Test
+    public void testWithDigits2() {
+        String text = "Test111 me222ssage 222 333 444 wit333h digits.";
+        assertThat(analizer.analize(text)).isEqualTo(4);
     }
 
     @Test

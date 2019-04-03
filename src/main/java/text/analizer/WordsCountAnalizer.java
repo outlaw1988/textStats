@@ -11,7 +11,7 @@ public class WordsCountAnalizer implements Analizer {
         if (text == null || text.isEmpty()) numOfWords = 0;
         else {
             numOfWords = (int) Arrays.stream(text.split(" "))
-                    .filter(word -> word.matches("\\S*[\\p{L}\\d]+\\S*"))
+                    .filter(word -> word.matches("\\S*[\\p{L}]+\\S*"))
                     .count();
         }
         return numOfWords;
