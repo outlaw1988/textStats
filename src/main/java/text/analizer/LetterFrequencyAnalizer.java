@@ -1,16 +1,36 @@
 package text.analizer;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class LetterFrequencyAnalizer implements Analizer {
 
+    private Map<Character, Double> lettersFrequency;
+
     @Override
-    public Map<String, Integer> analize(String text) {
-        return null;
+    public Map<Character, Double> analize(String text) {
+
+        if (text == null || text.isEmpty()) return new HashMap<>();
+
+        Map<String, Long> lettersHistogram = text.chars()
+                .mapToObj(c -> (char) c)
+                .map(c -> c.toString().toLowerCase())
+                .filter(c -> c.matches("\\p{L}"))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        double totalAmount = lettersHistogram.values().stream().reduce(0L, Long::sum).doubleValue();
+
+        lettersFrequency = lettersHistogram.entrySet().stream()
+                .collect(Collectors.toMap(e -> e.getKey().charAt(0),
+                        e -> (e.getValue().doubleValue()/totalAmount) * 100.0));
+
+        return lettersFrequency;
     }
 
     @Override
     public String interpret() {
-        return null;
+        return "Letters frequency is: " + lettersFrequency;
     }
 }

@@ -124,4 +124,12 @@ public class TenMostPopularWordsAnalizerTest {
         assertThat(actualResult).isEqualTo(expectedResult);
     }
 
+    @Test
+    public void testEmpty() {
+        String text = "";
+        List<String> expectedResult = new ArrayList<>();
+        List<String> actualResult = (List<String>) analizer.analize(text);
+        assertThat(actualResult).isEqualTo(expectedResult);
+    }
+
 }
