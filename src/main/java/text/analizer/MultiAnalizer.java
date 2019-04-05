@@ -6,7 +6,7 @@ public class MultiAnalizer {
 
     private final List<Analizer> analizers;
 
-    MultiAnalizer(List<Analizer> analizers){
+    public MultiAnalizer(List<Analizer> analizers){
         this.analizers = analizers;
     }
 
@@ -14,6 +14,7 @@ public class MultiAnalizer {
 
         for(Analizer analizer: analizers){
             analizer.analize(text);
+            System.out.println(analizer.interpret());
         }
 
     }
