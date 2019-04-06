@@ -28,9 +28,10 @@ public class Main {
         String text = FileReader.getText(fileName);
 
         List<Analizer> analizers = new ArrayList<>();
+
+        analizers.add(new LetterFrequencyAnalizer());
         analizers.add(new WordsCountAnalizer());
         analizers.add(new TenMostPopularWordsAnalizer());
-        analizers.add(new LetterFrequencyAnalizer());
         analizers.add(new TenLongestWordsAppearOnce());
 
         MultiAnalizer multiAnalizer = new MultiAnalizer(analizers);

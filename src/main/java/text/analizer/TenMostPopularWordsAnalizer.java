@@ -11,7 +11,7 @@ public class TenMostPopularWordsAnalizer implements Analizer {
     @Override
     public List<String> analize(String text) {
 
-        Map<String, Long> map = Arrays.stream(text.split(" "))
+        Map<String, Long> map = Arrays.stream(text.split("[/. -]|\\r?\\n"))
                 .filter(word -> word.matches("\\S*[\\p{L}]+\\S*"))
                 .map(String::toLowerCase)
                 .map(word -> word.replaceAll("[-+.^:,;()'\"\\[\\]]",""))
@@ -33,6 +33,14 @@ public class TenMostPopularWordsAnalizer implements Analizer {
 
     @Override
     public String interpret() {
-        return "Top ten words are: " + topTenWords;
+        StringBuilder sb = new StringBuilder();
+        sb.append("TOP TEN WORDS ARE:");
+
+        for(String word : topTenWords) {
+            sb.append(word).append(", ");
+        }
+
+        sb.setLength(sb.length() - 2);
+        return sb.toString();
     }
 }

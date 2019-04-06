@@ -13,10 +13,10 @@ public class TenLongestWordsAppearOnce implements Analizer {
 
         if (text == null || text.isEmpty()) return new ArrayList<>();
 
-        topTenLongestWords = Arrays.stream(text.split(" "))
+        topTenLongestWords = Arrays.stream(text.split("[/. -]|\\r?\\n"))
                 .filter(word -> word.matches("\\S*[\\p{L}]+\\S*"))
                 .map(String::toLowerCase)
-                .map(word -> word.replaceAll("[-+.^:,;()'\"\\[\\]]",""))
+                .map(word -> word.replaceAll("[-@#$%&*+.^:,;()/'\"\\[\\]!?]",""))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet()
                 .stream()
@@ -39,6 +39,15 @@ public class TenLongestWordsAppearOnce implements Analizer {
 
     @Override
     public String interpret() {
-        return "Longest words which appear only once: " + topTenLongestWords;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("LONGEST WORDS WHICH APPEAR ONLY ONCE: ");
+
+        for(String word : topTenLongestWords) {
+            sb.append(word).append(", ");
+        }
+
+        sb.setLength(sb.length() - 2);
+        return sb.toString();
     }
 }

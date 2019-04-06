@@ -37,6 +37,19 @@ public class LetterFrequencyAnalizer implements Analizer {
 
     @Override
     public String interpret() {
-        return "Letters frequency is: " + lettersFrequency;
+        StringBuilder sb = new StringBuilder();
+        sb.append("CHARACTERS FREQUENCY:\n");
+
+        for (Map.Entry<Character, Double> entry : lettersFrequency.entrySet()) {
+            sb
+                .append("|")
+                .append(entry.getKey())
+                .append("|")
+                .append("\t")
+                .append(entry.getValue())
+                .append("\n");
+        }
+
+        return sb.toString();
     }
 }

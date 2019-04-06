@@ -10,7 +10,8 @@ public class WordsCountAnalizer implements Analizer {
     public Integer analize(String text) {
         if (text == null || text.isEmpty()) numOfWords = 0;
         else {
-            numOfWords = (int) Arrays.stream(text.split(" "))
+            numOfWords = (int)
+            Arrays.stream(text.split("[/. -]|\\r?\\n"))
                     .filter(word -> word.matches("\\S*[\\p{L}]+\\S*"))
                     .count();
         }
@@ -19,6 +20,6 @@ public class WordsCountAnalizer implements Analizer {
 
     @Override
     public String interpret() {
-        return String.format("Text contains %d word(s)", numOfWords);
+        return String.format("TEXT CONTAINS: \t%d word(s)", numOfWords);
     }
 }

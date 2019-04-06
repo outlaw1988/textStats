@@ -59,7 +59,7 @@ public class SDADetector implements Detector {
 
     @Override
     public String interpret() {
-        return String.format("Detected language by SDA detector is %s", detectedLanguage);
+        return String.format("DETECTED LANGUAGE BY SDA DETECTOR IS: %s", detectedLanguage);
     }
 
     private void initializeMap() {
