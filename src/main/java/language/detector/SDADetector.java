@@ -67,5 +67,7 @@ public class SDADetector implements Detector {
         languages.put(polishMap, "Polish");
         languages.put(englishMap, "English");
         languages.put(germanMap, "German");
+        languages.put(spanishMap, "Spanish");
+        languages.put(frenchhMap, "French");
     }
 }

@@ -8,6 +8,8 @@ public class LanguagesData {
     public static final Map<Character, LetterStat> polishMap = new HashMap<>();
     public static final Map<Character, LetterStat> englishMap = new HashMap<>();
     public static final Map<Character, LetterStat> germanMap = new HashMap<>();
+    public static final Map<Character, LetterStat> spanishMap = new HashMap<>();
+    public static final Map<Character, LetterStat> frenchhMap = new HashMap<>();
 
     static {
         polishMap.put('a', new LetterStat(10.503, LetterType.TYPICAL));
@@ -110,5 +112,84 @@ public class LanguagesData {
         germanMap.put('ü', new LetterStat(0.995, LetterType.SPECIAL));
     }
 
+    static {
+        spanishMap.put('a', new LetterStat(11.525, LetterType.TYPICAL));
+        spanishMap.put('b', new LetterStat(2.215, LetterType.TYPICAL));
+        spanishMap.put('c', new LetterStat(4.019, LetterType.TYPICAL));
+        spanishMap.put('d', new LetterStat(5.010, LetterType.TYPICAL));
+        spanishMap.put('e', new LetterStat(12.181, LetterType.TYPICAL));
+        spanishMap.put('f', new LetterStat(0.692, LetterType.TYPICAL));
+        spanishMap.put('g', new LetterStat(1.768, LetterType.TYPICAL));
+        spanishMap.put('h', new LetterStat(0.703, LetterType.TYPICAL));
+        spanishMap.put('i', new LetterStat(6.247, LetterType.TYPICAL));
+        spanishMap.put('j', new LetterStat(0.493, LetterType.TYPICAL));
+        spanishMap.put('k', new LetterStat(0.011, LetterType.TYPICAL));
+        spanishMap.put('l', new LetterStat(4.967, LetterType.TYPICAL));
+        spanishMap.put('m', new LetterStat(3.157, LetterType.TYPICAL));
+        spanishMap.put('n', new LetterStat(6.712, LetterType.TYPICAL));
+        spanishMap.put('o', new LetterStat(8.683, LetterType.TYPICAL));
+        spanishMap.put('p', new LetterStat(2.510, LetterType.TYPICAL));
+        spanishMap.put('q', new LetterStat(0.877, LetterType.TYPICAL));
+        spanishMap.put('r', new LetterStat(6.871, LetterType.TYPICAL));
+        spanishMap.put('s', new LetterStat(7.977, LetterType.TYPICAL));
+        spanishMap.put('t', new LetterStat(4.632, LetterType.TYPICAL));
+        spanishMap.put('u', new LetterStat(2.927, LetterType.TYPICAL));
+        spanishMap.put('v', new LetterStat(1.138, LetterType.TYPICAL));
+        spanishMap.put('w', new LetterStat(0.017, LetterType.TYPICAL));
+        spanishMap.put('x', new LetterStat(0.215, LetterType.TYPICAL));
+        spanishMap.put('y', new LetterStat(1.008, LetterType.TYPICAL));
+        spanishMap.put('z', new LetterStat(0.467, LetterType.TYPICAL));
+
+        spanishMap.put('á', new LetterStat(0.502, LetterType.SPECIAL));
+        spanishMap.put('é', new LetterStat(0.433, LetterType.SPECIAL));
+        spanishMap.put('í', new LetterStat(0.725, LetterType.SPECIAL));
+        spanishMap.put('ñ', new LetterStat(0.311, LetterType.SPECIAL));
+        spanishMap.put('ó', new LetterStat(0.827, LetterType.SPECIAL));
+        spanishMap.put('ú', new LetterStat(0.168, LetterType.SPECIAL));
+        spanishMap.put('ü', new LetterStat(0.012, LetterType.SPECIAL));
+    }
+
+    static {
+        frenchhMap.put('a', new LetterStat(7.636, LetterType.TYPICAL));
+        frenchhMap.put('b', new LetterStat(0.901, LetterType.TYPICAL));
+        frenchhMap.put('c', new LetterStat(3.260, LetterType.TYPICAL));
+        frenchhMap.put('d', new LetterStat(3.669, LetterType.TYPICAL));
+        frenchhMap.put('e', new LetterStat(14.715, LetterType.TYPICAL));
+        frenchhMap.put('f', new LetterStat(1.066, LetterType.TYPICAL));
+        frenchhMap.put('g', new LetterStat(0.866, LetterType.TYPICAL));
+        frenchhMap.put('h', new LetterStat(0.737, LetterType.TYPICAL));
+        frenchhMap.put('i', new LetterStat(7.529, LetterType.TYPICAL));
+        frenchhMap.put('j', new LetterStat(0.613, LetterType.TYPICAL));
+        frenchhMap.put('k', new LetterStat(0.074, LetterType.TYPICAL));
+        frenchhMap.put('l', new LetterStat(5.456, LetterType.TYPICAL));
+        frenchhMap.put('m', new LetterStat(2.968, LetterType.TYPICAL));
+        frenchhMap.put('n', new LetterStat(7.095, LetterType.TYPICAL));
+        frenchhMap.put('o', new LetterStat(5.796, LetterType.TYPICAL));
+        frenchhMap.put('p', new LetterStat(2.521, LetterType.TYPICAL));
+        frenchhMap.put('q', new LetterStat(1.362, LetterType.TYPICAL));
+        frenchhMap.put('r', new LetterStat(6.693, LetterType.TYPICAL));
+        frenchhMap.put('s', new LetterStat(7.948, LetterType.TYPICAL));
+        frenchhMap.put('t', new LetterStat(7.244, LetterType.TYPICAL));
+        frenchhMap.put('u', new LetterStat(6.311, LetterType.TYPICAL));
+        frenchhMap.put('v', new LetterStat(1.838, LetterType.TYPICAL));
+        frenchhMap.put('w', new LetterStat(0.049, LetterType.TYPICAL));
+        frenchhMap.put('x', new LetterStat(0.427, LetterType.TYPICAL));
+        frenchhMap.put('y', new LetterStat(0.128, LetterType.TYPICAL));
+        frenchhMap.put('z', new LetterStat(0.326, LetterType.TYPICAL));
+
+        frenchhMap.put('à', new LetterStat(0.486, LetterType.SPECIAL));
+        frenchhMap.put('â', new LetterStat(0.051, LetterType.SPECIAL));
+        frenchhMap.put('ç', new LetterStat(0.085, LetterType.SPECIAL));
+        frenchhMap.put('è', new LetterStat(0.271, LetterType.SPECIAL));
+        frenchhMap.put('é', new LetterStat(1.504, LetterType.SPECIAL));
+        frenchhMap.put('ê', new LetterStat(0.218, LetterType.SPECIAL));
+        frenchhMap.put('ë', new LetterStat(0.008, LetterType.SPECIAL));
+        frenchhMap.put('î', new LetterStat(0.045, LetterType.SPECIAL));
+        frenchhMap.put('ï', new LetterStat(0.005, LetterType.SPECIAL));
+        frenchhMap.put('ô', new LetterStat(0.023, LetterType.SPECIAL));
+        frenchhMap.put('ù', new LetterStat(0.058, LetterType.SPECIAL));
+        frenchhMap.put('û', new LetterStat(0.060, LetterType.SPECIAL));
+        frenchhMap.put('œ', new LetterStat(0.018, LetterType.SPECIAL));
+    }
 
 }
