@@ -10,20 +10,14 @@ public class TenMostPopularWordsAnalizer implements Analizer {
     @Override
     public List<String> analize(String text) {
 
-        Map<String, Long> map = Analizer.getWordsMap(text)
+        return Analizer.getWordsMap(text)
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed()
                         .thenComparing(Map.Entry.comparingByKey()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
-
-        topTenWords = map.entrySet().stream()
                 .limit(10)
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
-
-        return topTenWords;
     }
 
     @Override

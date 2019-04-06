@@ -21,10 +21,6 @@ public class TenLongestWordsAppearOnce implements Analizer {
                 .stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed()
                          .thenComparing(Map.Entry.comparingByKey()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-                         (oldValue, newValue) -> oldValue, LinkedHashMap::new))
-                .entrySet()
-                .stream()
                 .limit(10)
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
