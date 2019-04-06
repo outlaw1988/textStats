@@ -1,7 +1,6 @@
 package text.analizer;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class TenLongestWordsAppearOnce implements Analizer {
@@ -13,11 +12,7 @@ public class TenLongestWordsAppearOnce implements Analizer {
 
         if (text == null || text.isEmpty()) return new ArrayList<>();
 
-        topTenLongestWords = Arrays.stream(text.split("[/. -]|\\r?\\n"))
-                .filter(word -> word.matches("\\S*[\\p{L}]+\\S*"))
-                .map(String::toLowerCase)
-                .map(word -> word.replaceAll("[-@#$%&*+.^:,;()/'\"\\[\\]!?]",""))
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+        topTenLongestWords = Analizer.getWordsMap(text)
                 .entrySet()
                 .stream()
                 .filter(e -> e.getValue().equals(1L))

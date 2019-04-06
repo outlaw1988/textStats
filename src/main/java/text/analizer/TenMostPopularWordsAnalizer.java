@@ -1,7 +1,6 @@
 package text.analizer;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class TenMostPopularWordsAnalizer implements Analizer {
@@ -11,11 +10,7 @@ public class TenMostPopularWordsAnalizer implements Analizer {
     @Override
     public List<String> analize(String text) {
 
-        Map<String, Long> map = Arrays.stream(text.split("[/. -]|\\r?\\n"))
-                .filter(word -> word.matches("\\S*[\\p{L}]+\\S*"))
-                .map(String::toLowerCase)
-                .map(word -> word.replaceAll("[-+.^:,;()'\"\\[\\]]",""))
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+        Map<String, Long> map = Analizer.getWordsMap(text)
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed()
@@ -34,7 +29,7 @@ public class TenMostPopularWordsAnalizer implements Analizer {
     @Override
     public String interpret() {
         StringBuilder sb = new StringBuilder();
-        sb.append("TOP TEN WORDS ARE:");
+        sb.append("TOP TEN WORDS ARE: ");
 
         for(String word : topTenWords) {
             sb.append(word).append(", ");
