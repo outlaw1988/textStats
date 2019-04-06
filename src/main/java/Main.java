@@ -1,3 +1,4 @@
+import language.detector.DLComDetector;
 import language.detector.Detector;
 import language.detector.SDADetector;
 import picocli.CommandLine;
@@ -35,9 +36,15 @@ public class Main {
         MultiAnalizer multiAnalizer = new MultiAnalizer(analizers);
         multiAnalizer.performAnalyzis(text);
 
-        Detector detector = new SDADetector();
-        detector.detect(text);
-        System.out.println(detector.interpret());
+        List<Detector> detectors = new ArrayList<>();
+        detectors.add(new SDADetector());
+        detectors.add(new DLComDetector());
+
+        for (Detector detector : detectors) {
+            detector.detect(text);
+            System.out.println(detector.interpret());
+        }
+
     }
 
 }

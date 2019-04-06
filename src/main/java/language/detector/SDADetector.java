@@ -11,8 +11,8 @@ import static language.detector.LanguagesData.*;
 public class SDADetector implements Detector {
 
     private Map<Map<Character, LetterStat>, String> languages;
-    private double bonusSpecial = -10.0;
-    private double penaltySpecial = 5;
+    private final double bonusSpecial = -10.0;
+    private final double penaltySpecial = 5;
 
     private String detectedLanguage;
 
@@ -59,7 +59,7 @@ public class SDADetector implements Detector {
 
     @Override
     public String interpret() {
-        return String.format("Detected language is %s", detectedLanguage);
+        return String.format("Detected language by SDA detector is %s", detectedLanguage);
     }
 
     private void initializeMap() {

@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class SDADetectorTest {
+public class DLComDetectorTest {
 
     private Detector detector;
 
     @Before
     public void before() {
-        detector = new SDADetector();
+        detector = new DLComDetector();
     }
 
     @Test
@@ -25,7 +25,7 @@ public class SDADetectorTest {
                 "głuche milczenie, ale szli wszyscy z biegiem wody, żeby widzieć, co się stanie. Już dwie trzecie " +
                 "rzeki przebyte, liczba płynących zmniejszyła się jeszcze, ale słychać już ciężkie chrapanie koni i " +
                 "głosy zachęcające mołojców; już widać, że niektórzy dopłyną.";
-        assertThat(detector.detect(text)).isEqualTo("Polish");
+        assertThat(detector.detect(text)).isEqualTo("pl");
     }
 
     @Test
@@ -41,7 +41,7 @@ public class SDADetectorTest {
                 "On his thirteenth birthday his father bought him a new trumpet,[16] and Davis began to play in local " +
                 "bands. He took additional trumpet lessons from Joseph Gustat, principal trumpeter of the St. Louis " +
                 "Symphony Orchestra.";
-        assertThat(detector.detect(text)).isEqualTo("English");
+        assertThat(detector.detect(text)).isEqualTo("en");
     }
 
     @Test
@@ -57,37 +57,7 @@ public class SDADetectorTest {
                 "die erste Tochter Cheryl. Da Irene noch andere Liebschaften hatte, war sich Miles Davis nicht sicher, " +
                 "ob Cheryl sein Kind war. Er übernahm dessen ungeachtet die finanzielle Verantwortung für sie.[7] Davis " +
                 "hatte mit Irene Birth insgesamt drei Kinder, heiratete sie aber nie. draußen";
-        assertThat(detector.detect(text)).isEqualTo("German");
-    }
-
-//    @Test
-//    public void testOneLetter() {
-//        String text = "a";
-//        assertThat(detector.detect(text)).isEqualTo("undetermined");
-//    }
-//
-//    @Test
-//    public void testOnePolishLetter() {
-//        String text = "ą";
-//        assertThat(detector.detect(text)).isEqualTo("Polish");
-//    }
-//
-//    @Test
-//    public void testOnlyPunctuation() {
-//        String text = ";;. , . :: \" \'";
-//        assertThat(detector.detect(text)).isEqualTo("undetermined");
-//    }
-
-    @Test
-    public void testEmpty() {
-        String text = "";
-        assertThat(detector.detect(text)).isNull();
-    }
-
-    @Test
-    public void testNull() {
-        String text = null;
-        assertThat(detector.detect(text)).isNull();
+        assertThat(detector.detect(text)).isEqualTo("de");
     }
 
 }
